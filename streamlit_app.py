@@ -27,8 +27,7 @@ with col3:
     crops = st.selectbox("Select a state", CROPS).strip()
 
 chart_data = pd.DataFrame({
-    'pig': [20, 18, 489, 675, 900]}, 
-    index=[1, 2, 3, 4, 5])
+    'pig': [20, 18, 489, 675, 900], 'index': [1, 2, 3, 4, 5]})
 
 chart = (
         alt.Chart(
@@ -38,7 +37,7 @@ chart = (
         .mark_line()
         .encode(
             x = alt.X("pig", axis=alt.Axis(title="Capacity 1")),
-            y = alt.Y("pig", axis=alt.Axis(title="Capacity 2")),
+            y = alt.Y("index", axis=alt.Axis(title="Capacity 2")),
         )
 )
 
