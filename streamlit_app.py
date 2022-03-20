@@ -8,6 +8,8 @@ st.title("Climate Effects on Crop Production")
 
 filename = 'Crops.csv'
 COUNTIES = []
+county = ""
+crop = ""
 
 col1, col2, col3 = st.columns(3)
 
@@ -22,17 +24,19 @@ with open(filename, 'r') as csvfile:
 
 with col2:
     counties = st.selectbox("Select a county", COUNTIES).strip()
+    county = counties
 
 with col3:
     crops = st.selectbox("Select a state", CROPS).strip()
+    crop = crops
 
 chart_data = pd.DataFrame({
-    'year': [2017, 2012, 2007, 2002, 1997], 'crop-production': [12, 30, 50, 100, 234]})
+    'year': [1997, 2002, 2007, 2012, 2017], 'crop-production': [12, 30, 50, 100, 234]})
 
 chart = (
         alt.Chart(
             data=chart_data,
-            title="Production of {crops} in {counties} County",
+            title="Production of {0} in {1} County".format(crop, county),
         )
         .mark_line()
         .encode(
