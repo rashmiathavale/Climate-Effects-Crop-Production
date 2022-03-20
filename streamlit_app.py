@@ -112,31 +112,31 @@ temp4 = 0
 temp5 = 0
 
 
-with open('Temperature-2017.csv', 'r') as csvfile:
+with open('Temperature_2017.csv', 'r') as csvfile:
     datareader = csv.reader(csvfile)
     for row in datareader:
       if (row[0] == county and row[1] == state):
         temp1 = row[2]
 
-with open('Temperature-2012.csv', 'r') as csvfile:
+with open('Temperature_2012.csv', 'r') as csvfile:
     datareader = csv.reader(csvfile)
     for row in datareader:
       if (row[0] == county and row[1] == state):
         temp2 = row[2]
 
-with open('Temperature-2007.csv', 'r') as csvfile:
+with open('Temperature_2007.csv', 'r') as csvfile:
     datareader = csv.reader(csvfile)
     for row in datareader:
       if (row[0] == county and row[1] == state):
         temp3 = row[2]
 
-with open('Temperature-2002.csv', 'r') as csvfile:
+with open('Temperature_2002.csv', 'r') as csvfile:
     datareader = csv.reader(csvfile)
     for row in datareader:
       if (row[0] == county and row[1] == state):
         temp4 = row[2]
 
-with open('Temperature-1997.csv', 'r') as csvfile:
+with open('Temperature_1997.csv', 'r') as csvfile:
     datareader = csv.reader(csvfile)
     for row in datareader:
       if (row[0] == county and row[1] == state):
