@@ -28,6 +28,10 @@ with col3:
 chart_data = pd.DataFrame({
     'pig': [20, 18, 489, 675, 1776],
     'horse': [4, 25, 281, 600, 1900]}, 
-    index=[1990, 1997, 2003, 2009, 2014])
+    index=[2017, 2012, 2007, 2002, 1997])
+
+ax = chart_data.plot(title='Production of {crops} in {counties} County');
+ax.set_xlabel("Year")
+ax.set_ylabel("Crop Production")
 
 st.line_chart(chart_data)
