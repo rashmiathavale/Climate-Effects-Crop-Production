@@ -2,6 +2,7 @@ import streamlit as st
 from constants import STATES, CROPS
 import csv
 import pandas as pd
+import altair as alt
 
 st.title("Climate Effects on Crop Production")
 
@@ -30,8 +31,6 @@ chart_data = pd.DataFrame({
     'horse': [4, 25, 281, 600, 1900]}, 
     index=[2017, 2012, 2007, 2002, 1997])
 
-ax = chart_data.plot(title='Production of {crops} in {counties} County');
-ax.set_xlabel("Year")
-ax.set_ylabel("Crop Production")
+c = alt.Chart(chart_data, title='Production of {crops} in {counties} County').mark_line().encode(x='Year', y='Crop Production')
 
-st.line_chart(chart_data)
+st.altair_chart(c)
