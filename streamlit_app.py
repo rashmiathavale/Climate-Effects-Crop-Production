@@ -31,6 +31,11 @@ chart_data = pd.DataFrame({
     'horse': [4, 25, 281, 600, 1900]}, 
     index=[2017, 2012, 2007, 2002, 1997])
 
-c = alt.Chart(chart_data, title='Production of {crops} in {counties} County').mark_line().encode(x='Year', y='Crop Production')
+line_chart = alt.Chart(chart_data).encode(
+    x='Horsepower',
+    y='Miles_per_Gallon',
+).properties(
+    title='Sales of consumer goods'
+)
 
-st.altair_chart(c)
+st.altair_chart(line_chart)
