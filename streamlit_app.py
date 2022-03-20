@@ -33,8 +33,6 @@ with col3:
 chart_data = pd.DataFrame({
     'year': ['1997', '2002', '2007', '2012', '2017'], 'crop-production': [12, 30, 50, 100, 234]})
 
-chart_data["year"] = pd.to_numeric(chart_data["year"])
-
 chart = (
         alt.Chart(
             data=chart_data,
