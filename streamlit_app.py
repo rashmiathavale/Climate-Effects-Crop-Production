@@ -105,9 +105,10 @@ chart = (
         )
 )
 
-st.altair_chart(chart)
 
-# .properties(
-#             width=500,
-#             height=300
-#         )
+col1, col2 = st.columns(2)
+
+with col1:
+    st.altair_chart(chart)
+with col2:
+    st.altair_chart(chart)
