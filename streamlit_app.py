@@ -102,10 +102,12 @@ chart = (
         .encode(
             x = alt.X("year", axis=alt.Axis(title="Year")),
             y = alt.Y("crop-production", axis=alt.Axis(title="Crop Production")),
-        ).properties(
-            width=500,
-            height=300
         )
 )
 
 st.altair_chart(chart)
+
+# .properties(
+#             width=500,
+#             height=300
+#         )
