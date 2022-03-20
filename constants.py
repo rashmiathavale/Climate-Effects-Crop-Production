@@ -1,8 +1,8 @@
 CROPS = [
-    'OATS',
-    'SOYBEANS',
-    'WHEAT',
-    'CORN'
+    'Oats',
+    'Soybeans',
+    'Wheat',
+    'Corn'
 ]
 
 STATES = [
