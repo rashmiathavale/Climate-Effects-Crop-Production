@@ -106,7 +106,7 @@ chart1 = (
 )
 
 temp_data = pd.DataFrame({
-    'year': ['1997', '2002', '2007', '2012', '2017'], 'temperature': []})
+    'year': ['1997', '2002', '2007', '2012', '2017'], 'temperature': [23,43,65,78,87]})
 
 chart2 = (
         alt.Chart(
