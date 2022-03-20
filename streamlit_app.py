@@ -32,7 +32,11 @@ y = []
     #plots = csv.reader(csvfile)
       
     #for row in plots:
-x.append(2017, 2012, 2007, 2002, 1997)
+x.append(2017)
+x.append(2012)
+x.append(2007)
+x.append(2002)
+x.append(1997)
 y.append(1)
   
 plt.Line2D(x, y)
