@@ -3,7 +3,6 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 from constants import STATES
-import matplotlib.pyplot as plt
 import csv
 
 filename = 'Crops.csv'
