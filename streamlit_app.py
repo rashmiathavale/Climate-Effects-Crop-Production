@@ -103,7 +103,7 @@ chart = (
             x = alt.X("year", axis=alt.Axis(title="Year")),
             y = alt.Y("crop-production", axis=alt.Axis(title="Crop Production")),
         ).properties(
-            width=800,
+            width=500,
             height=300
         )
 )
