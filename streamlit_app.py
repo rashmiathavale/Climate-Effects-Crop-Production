@@ -27,17 +27,17 @@ with col3:
     crops = st.selectbox("Select a state", CROPS).strip()
 
 chart_data = pd.DataFrame({
-    'pig': [20, 18, 489, 675, 900], 'index': [1, 2, 3, 4, 5]})
+    'year': [2017, 2012, 2007, 2002, 1997], 'crop-production': [12, 30, 50, 100, 234]})
 
 chart = (
         alt.Chart(
             data=chart_data,
-            title="Your title",
+            title="Production of {crop} in {counties} County",
         )
         .mark_line()
         .encode(
-            x = alt.X("pig", axis=alt.Axis(title="Capacity 1")),
-            y = alt.Y("index", axis=alt.Axis(title="Capacity 2")),
+            x = alt.X("year", axis=alt.Axis(title="Year")),
+            y = alt.Y("crop-production", axis=alt.Axis(title="Crop Production")),
         )
 )
 
