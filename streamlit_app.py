@@ -33,6 +33,11 @@ with col3:
     crop = crops
 
 colCounter = 0
+first = 0
+second = 0
+third = 0
+fourth = 0
+fifth = 0
 
 with open('Crops-2017.csv', 'r') as csvfile:
     datareader = csv.reader(csvfile)
