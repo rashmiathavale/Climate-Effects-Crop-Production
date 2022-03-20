@@ -32,7 +32,6 @@ with col3:
     crops = st.selectbox("Select a state", CROPS).strip()
     crop = crops
 
-first, second, third, fourth, fifth = 0
 colCounter = 0
 
 with open('Crops-2017.csv', 'r') as csvfile:
