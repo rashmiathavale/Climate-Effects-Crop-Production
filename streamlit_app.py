@@ -93,6 +93,8 @@ with open('Crops-1997.csv', 'r') as csvfile:
 chart_data = pd.DataFrame({
     'year': ['1997', '2002', '2007', '2012', '2017'], 'crop-production': [first, second, third, fourth, fifth]})
 
+chart_data.plot(figsize=(5,3))
+
 chart = (
         alt.Chart(
             data=chart_data,
