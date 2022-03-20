@@ -1,6 +1,7 @@
 import streamlit as st
 from constants import STATES, CROPS
 import csv
+import matplotlib.pyplot as plt
 
 st.title("Climate Effects on Crop Production")
 
@@ -23,3 +24,20 @@ with col2:
 
 with col3:
     crops = st.selectbox("Select a state", CROPS).strip()
+
+x = []
+y = []
+  
+#with open(filename,'r') as csvfile:
+    #plots = csv.reader(csvfile)
+      
+    #for row in plots:
+x.append(2017, 2012, 2007, 2002, 1997)
+y.append(1)
+  
+plt.Line2D(x, y)
+plt.xlabel('Year')
+plt.ylabel('Crop Production')
+plt.title('Production of {crops} in {counties} County')
+plt.show()
+st.write(plt)
