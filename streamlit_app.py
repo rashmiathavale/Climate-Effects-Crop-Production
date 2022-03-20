@@ -31,11 +31,16 @@ chart_data = pd.DataFrame({
     'horse': [4, 25, 281, 600, 1900]}, 
     index=[2017, 2012, 2007, 2002, 1997])
 
-line_chart = alt.Chart(chart_data).encode(
-    x='Horsepower',
-    y='Miles_per_Gallon',
-).properties(
-    title='Sales of consumer goods'
+chart = (
+        alt.Chart(
+            data=chart_data,
+            title="Your title",
+        )
+        .mark_line()
+        .encode(
+            x=alt.X("capacity 1", axis=alt.Axis(title="Capacity 1")),
+            x=alt.X("capacity 2", axis=alt.Axis(title="Capacity 2")),
+        )
 )
 
-st.altair_chart(line_chart)
+st.altair_chart(chart)
