@@ -27,8 +27,8 @@ with col3:
     crops = st.selectbox("Select a state", CROPS).strip()
 
 chart_data = pd.DataFrame({
-    'pig': [20, 18, 489, 675, 1776]}, 
-    index=[2017, 2012, 2007, 2002, 1997])
+    'pig': [20, 18, 489, 675, 900]}, 
+    index=[1, 2, 3, 4, 5])
 
 chart = (
         alt.Chart(
