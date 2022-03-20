@@ -3,6 +3,7 @@ from constants import STATES, CROPS
 import csv
 import pandas as pd
 import altair as alt
+import array as arr
 
 st.title("Climate Effects on Crop Production")
 
@@ -30,8 +31,10 @@ with col3:
     crops = st.selectbox("Select a state", CROPS).strip()
     crop = crops
 
+a = arr.array('d', [1997, 2002, 2007, 2012, 2017])
+
 chart_data = pd.DataFrame({
-    'year': [1997, 2002, 2007, 2012, 2017], 'crop-production': [12, 30, 50, 100, 234]})
+    'year': a, 'crop-production': [12, 30, 50, 100, 234]})
 
 chart = (
         alt.Chart(
