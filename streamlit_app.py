@@ -31,9 +31,7 @@ with col3:
     crop = crops
 
 chart_data = pd.DataFrame({
-    'year': [1997, 2002, 2007, 2012, 2017], 'crop-production': [12, 30, 50, 100, 234]})
-
-chart_data['year']=chart_data['year'].str.replace(',','')
+    'year': ['1997', '2002', '2007', '2012', '2017'], 'crop-production': [12, 30, 50, 100, 234]})
 
 chart_data["year"] = pd.to_numeric(chart_data["year"])
 
