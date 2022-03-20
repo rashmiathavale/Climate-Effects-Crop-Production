@@ -101,12 +101,50 @@ chart1 = (
         .mark_line()
         .encode(
             x = alt.X("year", axis=alt.Axis(title="Year")),
-            y = alt.Y("crop-production", axis=alt.Axis(title="Crop Production")),
+            y = alt.Y("crop-production", axis=alt.Axis(title="Crop Production (in BU)")),
         )
 )
 
+temp1 = 0
+temp2 = 0
+temp3 = 0
+temp4 = 0
+temp5 = 0
+
+
+with open('Temperature-2017.csv', 'r') as csvfile:
+    datareader = csv.reader(csvfile)
+    for row in datareader:
+      if (row[0] == county and row[1] == state):
+        temp1 = row[2]
+
+with open('Temperature-2012.csv', 'r') as csvfile:
+    datareader = csv.reader(csvfile)
+    for row in datareader:
+      if (row[0] == county and row[1] == state):
+        temp2 = row[2]
+
+with open('Temperature-2007.csv', 'r') as csvfile:
+    datareader = csv.reader(csvfile)
+    for row in datareader:
+      if (row[0] == county and row[1] == state):
+        temp3 = row[2]
+
+with open('Temperature-2002.csv', 'r') as csvfile:
+    datareader = csv.reader(csvfile)
+    for row in datareader:
+      if (row[0] == county and row[1] == state):
+        temp4 = row[2]
+
+with open('Temperature-1997.csv', 'r') as csvfile:
+    datareader = csv.reader(csvfile)
+    for row in datareader:
+      if (row[0] == county and row[1] == state):
+        temp5 = row[2]
+
+
 temp_data = pd.DataFrame({
-    'year': ['1997', '2002', '2007', '2012', '2017'], 'temperature': [23,43,65,78,87]})
+    'year': ['1997', '2002', '2007', '2012', '2017'], 'temperature': [temp1, temp2, temp3, temp4, temp5]})
 
 chart2 = (
         alt.Chart(
@@ -116,7 +154,7 @@ chart2 = (
         .mark_line()
         .encode(
             x = alt.X("year", axis=alt.Axis(title="Year")),
-            y = alt.Y("temperature", axis=alt.Axis(title="Temperature")),
+            y = alt.Y("temperature", axis=alt.Axis(title="Temperature (°F)")),
         )
 )
 
@@ -128,5 +166,3 @@ with col1:
     st.altair_chart(chart1)
 with col2:
     st.altair_chart(chart2)
-
-# https://remarkablemark.org/blog/2020/08/26/python-iterate-csv-rows/
