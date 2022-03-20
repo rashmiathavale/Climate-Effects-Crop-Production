@@ -93,7 +93,7 @@ with open('Crops-1997.csv', 'r') as csvfile:
 chart_data = pd.DataFrame({
     'year': ['1997', '2002', '2007', '2012', '2017'], 'crop-production': [first, second, third, fourth, fifth]})
 
-chart = (
+chart1 = (
         alt.Chart(
             data=chart_data,
             title="Production of {0} in {1} County".format(crop, county),
@@ -105,10 +105,28 @@ chart = (
         )
 )
 
+temp_data = pd.DataFrame({
+    'year': ['1997', '2002', '2007', '2012', '2017'], 'temperature': []})
+
+chart2 = (
+        alt.Chart(
+            data=temp_data,
+            title="Temperature in {0} County".format(county),
+        )
+        .mark_line()
+        .encode(
+            x = alt.X("year", axis=alt.Axis(title="Year")),
+            y = alt.Y("temperature", axis=alt.Axis(title="Temperature")),
+        )
+)
+
+col1, col2 = st.columns(2)
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.altair_chart(chart)
+    st.altair_chart(chart1)
 with col2:
-    st.altair_chart(chart)
+    st.altair_chart(chart2)
+
+# https://remarkablemark.org/blog/2020/08/26/python-iterate-csv-rows/
