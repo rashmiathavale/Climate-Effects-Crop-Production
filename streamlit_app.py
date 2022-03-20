@@ -32,7 +32,7 @@ chart_data = pd.DataFrame({
 chart = (
         alt.Chart(
             data=chart_data,
-            title="Production of {crop} in {counties} County",
+            title="Production of {crops} in {counties} County",
         )
         .mark_line()
         .encode(
