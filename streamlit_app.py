@@ -1,8 +1,8 @@
 import streamlit as st
-from constants import STATES, CROPS
 import csv
 import pandas as pd
 import altair as alt
+from constants import STATES, CROPS
 
 st.title("Climate Effects on Crop Production")
 
@@ -101,7 +101,7 @@ chart1 = (
         .mark_line()
         .encode(
             x = alt.X("year", axis=alt.Axis(title="Year")),
-            y = alt.Y("crop-production", axis=alt.Axis(title="Crop Production (in BU)")),
+            y = alt.Y("crop-production", axis=alt.Axis(title="Crop Production (BU)")),
         )
 )
 
@@ -110,7 +110,6 @@ temp2 = 0
 temp3 = 0
 temp4 = 0
 temp5 = 0
-
 
 with open('Temperature_2017.csv', 'r') as csvfile:
     datareader = csv.reader(csvfile)
@@ -141,7 +140,6 @@ with open('Temperature_1997.csv', 'r') as csvfile:
     for row in datareader:
       if (row[0] == county and row[1] == state):
         temp5 = row[2]
-
 
 temp_data = pd.DataFrame({
     'year': ['1997', '2002', '2007', '2012', '2017'], 'temperature': [temp1, temp2, temp3, temp4, temp5]})
