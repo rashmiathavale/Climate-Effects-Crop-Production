@@ -16,6 +16,6 @@ with open(filename, 'r') as csvfile:
     datareader = csv.reader(csvfile)
     for row in datareader:
         if row[1] == states:
-            COUNTIES += row[0];
+            COUNTIES.append(row[0]);
 
 counties = st.selectbox("Select a county", COUNTIES).strip()
