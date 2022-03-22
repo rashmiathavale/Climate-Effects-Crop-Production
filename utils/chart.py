@@ -30,7 +30,6 @@ def get_chart(data):
             x="year",
             y="temperature",
             opacity=alt.condition(hover, alt.value(0.3), alt.value(0)),
-            sort="descending",
             tooltip=[
                 alt.Tooltip("year", title="Year"),
                 alt.Tooltip("temperature", title="Temperature (°F)"),
