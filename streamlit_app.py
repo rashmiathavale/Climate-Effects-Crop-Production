@@ -3,6 +3,8 @@ import csv
 import pandas as pd
 import altair as alt
 import pydeck as py
+import geopy
+from geopy.geocoders import Nominatim
 from constants import STATES, CROPS
 from utils import temperature_chart, crop_chart
 
@@ -147,11 +149,14 @@ with col1:
 with col2:
     st.altair_chart(chart2, use_container_width=True)
 
+geolocator = Nominatim()
+location = geolocator.geocode("{county} {state}")
+
 st.pydeck_chart(py.Deck(
      map_style='mapbox://styles/mapbox/light-v9',
      initial_view_state=py.ViewState(
-         latitude=37.76,
-         longitude=-122.4,
+         latitude=location.latitude,
+         longitude=-location.longitude,
          zoom=11,
          pitch=50
 )))
