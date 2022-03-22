@@ -154,8 +154,8 @@ response = requests.get(url).json()
 st.pydeck_chart(py.Deck(
      map_style='mapbox://styles/mapbox/light-v9',
      initial_view_state=py.ViewState(
-         latitude=response[0]["lat"],
-         longitude=response[0]["lon"],
+         latitude=int(float(response[0]["lat"])),
+         longitude=int(float(response[0]["lon"])),
          zoom=11,
          pitch=50
 )))
