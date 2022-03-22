@@ -14,7 +14,7 @@ def get_chart(data):
         .mark_line()
         .encode(
             x = alt.X("year", axis=alt.Axis(title="Year")),
-            y = alt.Y("temperature", axis=alt.Axis(title="Temperature (°F)"), sort="ascending"),
+            y = alt.Y("temperature", axis=alt.Axis(title="Temperature (°F)"), sort="descending"),
             color=alt.Color("County")
         )
     )
@@ -27,8 +27,8 @@ def get_chart(data):
         alt.Chart(data)
         .mark_rule()
         .encode(
-            x="year",
-            y="temperature",
+            x = alt.X("year", axis=alt.Axis(title="Year")),
+            y = alt.Y("temperature", axis=alt.Axis(title="Temperature (°F)"), sort="descending"),
             opacity=alt.condition(hover, alt.value(0.3), alt.value(0)),
             tooltip=[
                 alt.Tooltip("year", title="Year"),
