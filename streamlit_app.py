@@ -153,7 +153,7 @@ chart2 = (
         .encode(
             x = alt.X("year", axis=alt.Axis(title="Year")),
             y = alt.Y("temperature", axis=alt.Axis(title="Temperature (°F)"), sort="descending"),
-            color='County'
+            color=alt.Color('species')
         )
 )
 
