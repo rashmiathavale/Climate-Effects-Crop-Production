@@ -142,7 +142,7 @@ with open('Temperature_1997.csv', 'r') as csvfile:
         temp5 = row[2]
 
 temp_data = pd.DataFrame({
-    'year': ['1997', '2002', '2007', '2012', '2017'], 'temperature': [temp1, temp2, temp3, temp4, temp5]})
+    'year': ['1997', '2002', '2007', '2012', '2017'], 'temperature': [temp1, temp2, temp3, temp4, temp5], "County": [county]})
 
 chart2 = (
         alt.Chart(
@@ -153,7 +153,7 @@ chart2 = (
         .encode(
             x = alt.X("year", axis=alt.Axis(title="Year")),
             y = alt.Y("temperature", axis=alt.Axis(title="Temperature (°F)"), sort="descending"),
-            color=alt.Color('species')
+            color=alt.Color("County")
         )
 )
 
