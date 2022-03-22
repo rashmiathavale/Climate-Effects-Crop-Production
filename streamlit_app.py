@@ -3,8 +3,7 @@ import csv
 import pandas as pd
 import altair as alt
 from constants import STATES, CROPS
-from utils import temperature_chart
-from utils import crop_chart
+from utils import temperature_chart, crop_chart
 
 st.title("Climate Effects on Crop Production")
 

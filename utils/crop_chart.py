@@ -1,7 +1,7 @@
 import altair as alt
-from streamlit_app import crop
 
 def get_chart(data):
+    from streamlit_app import crop
     hover = alt.selection_single(
         fields=["year"],
         nearest=True,
