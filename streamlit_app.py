@@ -30,7 +30,7 @@ with col2:
     county = counties
 
 with col3:
-    crops = st.selectbox("Select a crop", CROPS).strip()
+    crops = st.multiselect("Select a crop", CROPS).strip()
     crop = crops
 
 colCounter = 0
