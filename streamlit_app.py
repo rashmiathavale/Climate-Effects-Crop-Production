@@ -152,7 +152,7 @@ chart2 = (
         .mark_line()
         .encode(
             x = alt.X("year", axis=alt.Axis(title="Year")),
-            y = alt.Y("temperature", axis=alt.Axis(title="Temperature (°F)")),
+            y = alt.Y("temperature", axis=alt.Axis(title="Temperature (°F)"), sort="ascending"),
         )
 )
 
