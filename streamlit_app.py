@@ -92,7 +92,7 @@ with open('Crops-1997.csv', 'r') as csvfile:
                 fifth = col[colCounter]
 
 crop_data = pd.DataFrame({
-    'year': ['1997', '2002', '2007', '2012', '2017'], 'crop-production': [first, second, third, fourth, fifth], "County": county})
+    'year': ['1997', '2002', '2007', '2012', '2017'], 'crop-production': [first, second, third, fourth, fifth], "Crop": crop})
 
 chart1 = crop_chart.get_chart(crop_data)
 

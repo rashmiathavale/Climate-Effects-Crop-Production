@@ -1,7 +1,6 @@
 import altair as alt
 
 def get_chart(data):
-    from streamlit_app import crop
     hover = alt.selection_single(
         fields=["year"],
         nearest=True,
@@ -10,13 +9,13 @@ def get_chart(data):
     )
 
     lines = (
-        alt.Chart(data, title="Production of {0}".format(crop),
+        alt.Chart(data, title="Crop Production",
         )
         .mark_line()
         .encode(
             x = alt.X("year", axis=alt.Axis(title="Year")),
             y = alt.Y("crop-production", axis=alt.Axis(title="Crop Production (BU)"), sort="descending"),
-            color=alt.Color("County")
+            color=alt.Color("Crop")
         )
     )
 
