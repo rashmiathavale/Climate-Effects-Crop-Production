@@ -91,17 +91,18 @@ with open('Crops-1997.csv', 'r') as csvfile:
                 fifth = col[colCounter]
 
 chart_data = pd.DataFrame({
-    'year': ['1997', '2002', '2007', '2012', '2017'], 'crop-production': [first, second, third, fourth, fifth]})
+    'year': ['1997', '2002', '2007', '2012', '2017'], 'crop-production': [first, second, third, fourth, fifth], "County": county})
 
 chart1 = (
         alt.Chart(
             data=chart_data,
-            title="Production of {0} in {1} County".format(crop, county),
+            title="Production of {0}".format(crop),
         )
         .mark_line()
         .encode(
             x = alt.X("year", axis=alt.Axis(title="Year")),
             y = alt.Y("crop-production", axis=alt.Axis(title="Crop Production (BU)"), sort="descending"),
+            color=alt.Color("County")
         )
 )
 
@@ -147,7 +148,7 @@ temp_data = pd.DataFrame({
 chart2 = (
         alt.Chart(
             data=temp_data,
-            title="Temperature in {0} County".format(county),
+            title="Temperature",
         )
         .mark_line()
         .encode(
