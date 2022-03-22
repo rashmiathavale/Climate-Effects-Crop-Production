@@ -3,7 +3,7 @@ import csv
 import pandas as pd
 import altair as alt
 from constants import STATES, CROPS
-from utils import chart
+from utils import temperature_chart, crop_chart
 
 st.title("Climate Effects on Crop Production")
 
@@ -91,21 +91,10 @@ with open('Crops-1997.csv', 'r') as csvfile:
             if (col[0] == county and col[1] == state):
                 fifth = col[colCounter]
 
-chart_data = pd.DataFrame({
+crop_data = pd.DataFrame({
     'year': ['1997', '2002', '2007', '2012', '2017'], 'crop-production': [first, second, third, fourth, fifth], "County": county})
 
-chart1 = (
-        alt.Chart(
-            data=chart_data,
-            title="Production of {0}".format(crop),
-        )
-        .mark_line()
-        .encode(
-            x = alt.X("year", axis=alt.Axis(title="Year")),
-            y = alt.Y("crop-production", axis=alt.Axis(title="Crop Production (BU)"), sort="descending"),
-            color=alt.Color("County")
-        )
-)
+chart1 = crop_chart.get_chart(crop_data)
 
 temp1 = 0
 temp2 = 0
@@ -146,7 +135,7 @@ with open('Temperature_1997.csv', 'r') as csvfile:
 temp_data = pd.DataFrame({
     'year': ['1997', '2002', '2007', '2012', '2017'], 'temperature': [temp1, temp2, temp3, temp4, temp5], "County": county})
 
-chart2 = chart.get_chart(temp_data)
+chart2 = temperature_chart.get_chart(temp_data)
 
 col1, col2 = st.columns(2)
 
