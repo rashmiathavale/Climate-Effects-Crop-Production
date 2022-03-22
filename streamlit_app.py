@@ -149,7 +149,7 @@ with col1:
 with col2:
     st.altair_chart(chart2, use_container_width=True)
 
-geolocator = Nominatim()
+geolocator = Nominatim(user_agent="email@email.com")
 location = geolocator.geocode("{county} {state}")
 
 st.pydeck_chart(py.Deck(
