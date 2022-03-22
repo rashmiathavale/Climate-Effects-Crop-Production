@@ -101,7 +101,7 @@ chart1 = (
         .mark_line()
         .encode(
             x = alt.X("year", axis=alt.Axis(title="Year")),
-            y = alt.Y("crop-production", axis=alt.Axis(title="Crop Production (BU)")),
+            y = alt.Y("crop-production", axis=alt.Axis(title="Crop Production (BU)"), sort="descending"),
         )
 )
 
