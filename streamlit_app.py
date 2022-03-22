@@ -2,6 +2,7 @@ import streamlit as st
 import csv
 import pandas as pd
 import altair as alt
+import pydeck as py
 from constants import STATES, CROPS
 from utils import temperature_chart, crop_chart
 
@@ -145,3 +146,12 @@ with col1:
     st.altair_chart(chart1, use_container_width=True)
 with col2:
     st.altair_chart(chart2, use_container_width=True)
+
+st.pydeck_chart(py.Deck(
+     map_style='mapbox://styles/mapbox/light-v9',
+     initial_view_state=py.ViewState(
+         latitude=37.76,
+         longitude=-122.4,
+         zoom=11,
+         pitch=50
+)))
