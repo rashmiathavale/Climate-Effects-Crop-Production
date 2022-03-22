@@ -3,8 +3,8 @@ import csv
 import pandas as pd
 import altair as alt
 import pydeck as py
-import geopy
-from geopy.geocoders import Nominatim
+import requests
+import urllib.parse
 from constants import STATES, CROPS
 from utils import temperature_chart, crop_chart
 
@@ -149,14 +149,14 @@ with col1:
 with col2:
     st.altair_chart(chart2, use_container_width=True)
 
-geolocator = Nominatim(user_agent="email@email.com")
-location = geolocator.geocode("California")
+url = "https://nominatim.openstreetmap.org/?addressdetails=1&q=" + county + "+" + state +"&format=json&limit=1"
+response = requests.get(url).json()
 
 st.pydeck_chart(py.Deck(
      map_style='mapbox://styles/mapbox/light-v9',
      initial_view_state=py.ViewState(
-         latitude=location.latitude,
-         longitude=-location.longitude,
+         latitude=response[0]["lat"],
+         longitude=response[0]["lon"],
          zoom=11,
          pitch=50
 )))

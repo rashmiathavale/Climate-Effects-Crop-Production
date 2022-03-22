@@ -2,5 +2,5 @@ pandas
 streamlit
 altair
 pydeck
-geopy
-Nominatim
+requests
+urllib.parse
