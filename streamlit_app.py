@@ -4,7 +4,6 @@ import pandas as pd
 import altair as alt
 import pydeck as py
 import requests
-import urllib.parse
 from constants import STATES, CROPS
 from utils import temperature_chart, crop_chart
 

@@ -3,4 +3,3 @@ streamlit
 altair
 pydeck
 requests
-urllib.parse
