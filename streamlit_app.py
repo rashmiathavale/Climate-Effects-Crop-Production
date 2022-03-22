@@ -36,16 +36,16 @@ with col3:
     crop = crops
 
 if crop == "Oats":
-    st.write("California ranks as the second-largest rice-growing state in the United States. The majority of rice is grown in the Sacramento Valley, where hot days and cool nights—along with clay soil that holds on to virtually every drop of moisture—create the perfect conditions for growing California's distinctive japonica rice. Oats grow best in cool, moist climates, with the optimum temperature for growth being between 20°C and 21°C (68-70°F).")
+    st.write("Major oat producing states are Iowa, Minnesota and Wisconsin. Oats grow best in cool, moist climates, with the optimum temperature for growth being between 20°C and 21°C (68-70°F). The plants will thrive in well drained soils but are adapted to grow in many soil types, requiring a pH between 5.5 and 7.0.")
 
 if crop == "Soybeans":
-    st.write("More than 80 percent of soybeans are cultivated in the upper Midwest. Soybeans are a temperate leguminous plant with an ideal daytime temperature of 85° F. When air temperatures exceed 85° F, soybeans can experience heat stress regardless of reproductive stage. When soybeans experience heat stress, yield reductions can begin to occur, especially when soil moisture is limiting.")
+    st.write("More than 80 percent of soybeans are cultivated in the upper Midwest. Soybeans are a temperate leguminous plant with an ideal daytime temperature of 85°F. When air temperatures exceed 85°F, soybeans can experience heat stress regardless of reproductive stage. When soybeans experience heat stress, yield reductions can begin to occur, especially when soil moisture is limiting.")
 
 if crop == "Wheat":
-    st.write("In addition to Kansas, North Dakota, and Washington, other major wheat-producing states include Oklahoma, Montana, Idaho, Colorado, Minnesota, Texas, and Oregon. High temperature stress is a major environmental factor that limits yield in wheat. Every 1°C increase above a mean temperature of 23°C decreases wheat yield by ~10%. More than 40 percent of total wheat area in the world is affected by high temperature stress.")
+    st.write("Minnesota is a major wheat-producing state. High temperature stress is a major environmental factor that limits yield in wheat. Every 1°C increase above a mean temperature of 23°C decreases wheat yield by around 10 percent. More than 40 percent of total wheat area in the world is affected by high temperature stress.")
 
 if crop == "Corn":
-    st.write("Corn is grown in most U.S. States, but production is concentrated in the Heartland region. Corn originated as a tropical grass and can tolerate exposures to adverse temperatures as high as 112°F for brief periods. Optimal daytime temperatures for corn typically range between 77°F and 91°F. Growth decreases when temperatures exceed 95°F.")
+    st.write("Corn is grown in most U.S. states, but production is concentrated in the Heartland region. Corn originated as a tropical grass and can tolerate exposures to adverse temperatures as high as 112°F for brief periods. Optimal daytime temperatures for corn typically range between 77°F and 91°F. Growth decreases when temperatures exceed 95°F.")
 
 colCounter = 0
 first = 0
@@ -159,7 +159,6 @@ with col1:
     st.altair_chart(chart1, use_container_width=True)
 with col2:
     st.altair_chart(chart2, use_container_width=True)
-
 
 url = "https://nominatim.openstreetmap.org/?addressdetails=1&q=" + county + "+" + state +"&format=json&limit=1"
 response = requests.get(url).json()
