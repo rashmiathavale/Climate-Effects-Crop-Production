@@ -3,7 +3,8 @@ import csv
 import pandas as pd
 import altair as alt
 from constants import STATES, CROPS
-from utils import temperature_chart, crop_chart
+from utils import temperature_chart
+from utils import crop_chart
 
 st.title("Climate Effects on Crop Production")
 
@@ -94,7 +95,7 @@ with open('Crops-1997.csv', 'r') as csvfile:
 crop_data = pd.DataFrame({
     'year': ['1997', '2002', '2007', '2012', '2017'], 'crop-production': [first, second, third, fourth, fifth], "County": county})
 
-chart1 = crop_chart.get_crop_chart(crop_data)
+chart1 = crop_chart.get_chart(crop_data)
 
 temp1 = 0
 temp2 = 0
