@@ -50,6 +50,8 @@ if crop == "Wheat":
 if crop == "Corn":
     st.markdown("<p style='text-align: center;'>Corn is grown in most U.S. states, but production is concentrated in the Heartland region. Corn originated as a tropical grass and can tolerate exposures to adverse temperatures as high as 112°F for brief periods. Optimal daytime temperatures for corn typically range between 77°F and 91°F. Growth decreases when temperatures exceed 95°F.</p>", unsafe_allow_html=True)
 
+st.markdown("""---""")
+
 url = "https://nominatim.openstreetmap.org/?addressdetails=1&q=" + county + "+" + state +"&format=json&limit=1"
 response = requests.get(url).json()
 
