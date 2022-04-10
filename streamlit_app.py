@@ -8,7 +8,6 @@ from constants import STATES, CROPS
 from utils import temperature_chart, crop_chart, totalProd_chart, totalTemp_chart
 
 st.markdown("<h1 style='text-align: center; color: black;'>Climate Effects on Crop Production</h1>", unsafe_allow_html=True)
-
 st.markdown("""---""")
 
 filename = 'Crops-2017.csv'
@@ -52,7 +51,6 @@ if crop == "Corn":
     st.markdown("<p style='text-align: center; color: black;'>Corn is grown in most U.S. states, but production is concentrated in the Heartland region. Corn originated as a tropical grass and can tolerate exposures to adverse temperatures as high as 112°F for brief periods. Optimal daytime temperatures for corn typically range between 77°F and 91°F. Growth decreases when temperatures exceed 95°F.</p>", unsafe_allow_html=True)
 
 st.markdown("""---""")
-
 st.markdown("<h1 style='text-align: center; color: black;'>County</h1>", unsafe_allow_html=True)
 
 colCounter = 0
@@ -82,7 +80,6 @@ with open('Crops-2017.csv', 'r') as csvfile:
                     hold += int(col[colCounter])
                     totalCrop1 = str(hold)
         
-
 with open('Crops-2012.csv', 'r') as csvfile:
     datareader = csv.reader(csvfile)
     for row in datareader:
@@ -97,9 +94,7 @@ with open('Crops-2012.csv', 'r') as csvfile:
                     hold = int(totalCrop2)
                     hold += int(col[colCounter])
                     totalCrop2 = str(hold)
-                
-            
-
+         
 with open('Crops-2007.csv', 'r') as csvfile:
     datareader = csv.reader(csvfile)
     for row in datareader:
@@ -169,38 +164,31 @@ stateCount3 = 0
 stateCount4 = 0
 stateCount5 = 0
 
-
 with open('Temperature_2017.csv', 'r') as csvfile:
     datareader = csv.reader(csvfile)
     for row in datareader:
         if (row[0] == county and row[1] == state):
             temp1 = row[2]
         if (row[1] == state):
-            # stateCount += 1.0
             stateCount1 += 1
             hold = float(totalTemp1)
             hold += float(row[2])
             totalTemp1 = str(hold)
     hold2 = float(totalTemp1) / stateCount1
-    # hold2 = hold2
     totalTemp1 = str(hold2)
     
-
 with open('Temperature_2012.csv', 'r') as csvfile:
     datareader = csv.reader(csvfile)
     for row in datareader:
         if (row[0] == county and row[1] == state):
             temp2 = row[2]
         if (row[1] == state):
-            # stateCount += 1.0
             stateCount2 += 1
             hold = float(totalTemp2)
             hold += float(row[2])
             totalTemp2 = str(hold)
     hold2 = float(totalTemp2) / stateCount2
-    # hold2 = hold2
     totalTemp2 = str(hold2)
-
 
 with open('Temperature_2007.csv', 'r') as csvfile:
     datareader = csv.reader(csvfile)
@@ -208,13 +196,11 @@ with open('Temperature_2007.csv', 'r') as csvfile:
         if (row[0] == county and row[1] == state):
             temp3 = row[2]
         if (row[1] == state):
-            # stateCount += 1.0
             stateCount3 += 1
             hold = float(totalTemp3)
             hold += float(row[2])
             totalTemp3 = str(hold)
     hold2 = float(totalTemp3) / stateCount3
-    # hold2 = hold2
     totalTemp3 = str(hold2)
 
 with open('Temperature_2002.csv', 'r') as csvfile:
@@ -223,13 +209,11 @@ with open('Temperature_2002.csv', 'r') as csvfile:
         if (row[0] == county and row[1] == state):
             temp4 = row[2]
         if (row[1] == state):
-            # stateCount += 1.0
             stateCount4 += 1
             hold = float(totalTemp4)
             hold += float(row[2])
             totalTemp4 = str(hold)
     hold2 = float(totalTemp4) / stateCount4
-    # hold2 = hold2
     totalTemp4 = str(hold2)
 
 with open('Temperature_1997.csv', 'r') as csvfile:
@@ -238,13 +222,11 @@ with open('Temperature_1997.csv', 'r') as csvfile:
         if (row[0] == county and row[1] == state):
             temp5 = row[2]
         if (row[1] == state):
-            # stateCount += 1.0
             stateCount5 += 1
             hold = float(totalTemp5)
             hold += float(row[2])
             totalTemp5 = str(hold)
     hold2 = float(totalTemp5) / float(stateCount5)
-    # hold2 = hold2
     totalTemp5 = str(hold2)
 
 temp_data = pd.DataFrame({
@@ -256,7 +238,6 @@ avgTemp_data = pd.DataFrame({
 chart2 = temperature_chart.get_chart(temp_data)
 
 col1, col2 = st.columns(2)
-
 col1, col2 = st.columns(2)
 
 with col1:
