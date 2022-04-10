@@ -174,7 +174,7 @@ with open('Temperature_2017.csv', 'r') as csvfile:
             hold = float(totalTemp1)
             hold += float(row[2])
             totalTemp1 = str(hold)
-    hold2 = float(totalTemp1) / stateCount1
+    hold2 = round(float(totalTemp1) / stateCount1,2)
     totalTemp1 = str(hold2)
     
 with open('Temperature_2012.csv', 'r') as csvfile:
@@ -187,7 +187,7 @@ with open('Temperature_2012.csv', 'r') as csvfile:
             hold = float(totalTemp2)
             hold += float(row[2])
             totalTemp2 = str(hold)
-    hold2 = float(totalTemp2) / stateCount2
+    hold2 = round(float(totalTemp2) / stateCount2, 2)
     totalTemp2 = str(hold2)
 
 with open('Temperature_2007.csv', 'r') as csvfile:
@@ -200,7 +200,7 @@ with open('Temperature_2007.csv', 'r') as csvfile:
             hold = float(totalTemp3)
             hold += float(row[2])
             totalTemp3 = str(hold)
-    hold2 = float(totalTemp3) / stateCount3
+    hold2 = round(float(totalTemp3) / stateCount3, 2)
     totalTemp3 = str(hold2)
 
 with open('Temperature_2002.csv', 'r') as csvfile:
@@ -213,7 +213,7 @@ with open('Temperature_2002.csv', 'r') as csvfile:
             hold = float(totalTemp4)
             hold += float(row[2])
             totalTemp4 = str(hold)
-    hold2 = float(totalTemp4) / stateCount4
+    hold2 = round(float(totalTemp4) / stateCount4, 2)
     totalTemp4 = str(hold2)
 
 with open('Temperature_1997.csv', 'r') as csvfile:
@@ -226,7 +226,7 @@ with open('Temperature_1997.csv', 'r') as csvfile:
             hold = float(totalTemp5)
             hold += float(row[2])
             totalTemp5 = str(hold)
-    hold2 = float(totalTemp5) / float(stateCount5)
+    hold2 = round(float(totalTemp5) / float(stateCount5), 2)
     totalTemp5 = str(hold2)
 
 temp_data = pd.DataFrame({
